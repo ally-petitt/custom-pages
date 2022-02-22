@@ -7,8 +7,10 @@ function TemplateForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const res = await addItemToDb(input)
-        console.log("parsed response: " ,JSON.parse(JSON.stringify(res.httpResponse)))
+        const res = addItemToDb(input)
+        if (res.statusCode == 200) {
+          console.log("congrats! Your submission went through")
+        }
     }
 
     const handleChange = ({ target }) => {

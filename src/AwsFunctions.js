@@ -1,4 +1,3 @@
-import { DynamoDBClient, ListTablesCommand } from "@aws-sdk/client-dynamodb";
 import AWS from 'aws-sdk';
 
 AWS.config.update({
@@ -10,8 +9,6 @@ AWS.config.update({
 const client = new AWS.DynamoDB({
     region: 'us-east-1'
 });
-
-// const client = DynamoDBClient({ region: "us-east-1"})
 
 export const listTables = () => {
     const response = client.listTables({}).send();
@@ -31,4 +28,20 @@ export const addItemToDb = ({ pathname, message, templateName }) => {
     setTimeout(() => {
         return res.httpResponse
     }, 200)
+}
+
+export const getItemFromDb = async (pathname) => {
+
+    return new Promise((resolve, reject) => {
+        const res = client.getItem({
+        TableName: "template_info",
+        Key: {
+            pathname: { S: pathname }
+        }
+        }).send()
+
+        setTimeout(() => {
+            resolve(res.data)
+        }, 200)
+    })
 }

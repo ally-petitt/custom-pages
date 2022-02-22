@@ -1,9 +1,21 @@
+import { useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { getItemFromDb } from "../../AwsFunctions"
 
-// the template container will load in the component that corresponds to the template that the user chose 
-// when they initially made the purchase. It will pass in props
 function TemplateContainer() {
-    console.log(useLocation())
+  const path = useLocation().pathname.slice(1) // remove '/' at beginning of pathname
+
+  useEffect(async () => {
+    await getItemFromDb(path).then((res) => {
+      if (!res.Item) {
+        console.log('page not found')
+      } else{
+        console.log(res.Item)
+      }
+    });
+    
+  }, [])
+
   return (
     <div>TemplateContainer</div>
   )
