@@ -3,8 +3,8 @@ import AWS from 'aws-sdk';
 
 AWS.config.update({
     region: 'us-east-1',
-    secretAccessKey: '[REDACTED]',
-    accessKeyId: '[REDACTED]'
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY
 })
 
 const client = new AWS.DynamoDB({
@@ -13,22 +13,22 @@ const client = new AWS.DynamoDB({
 
 // const client = DynamoDBClient({ region: "us-east-1"})
 
-export const listTables = async () => {
-    const response = await client.listTables({});
-    console.log(response.send())
-    const createdTable = await client.createTable({ 
-        TableName: "test-table",
-        KeySchema: [
-            {
-              AttributeName: "Season", 
-              KeyType: "HASH",
-            },
-            {
-              AttributeName: "Episode",
-              KeyType: "RANGE",
-            },
-          ],
-    }).send()
+export const listTables = () => {
+    const response = client.listTables({}).send();
+    console.log(response)
+}
 
-    // console.log("table created", createdTable)
+export const addItemToDb = ({ pathname, message, templateName }) => {
+    const res = client.putItem({ 
+        Item: { 
+            pathname: { S: pathname },
+            message: { S: message },
+            templateName: { S: templateName }
+        },
+        TableName: "template_info",
+    }).send()
+    
+    setTimeout(() => {
+        return res.httpResponse
+    }, 200)
 }
