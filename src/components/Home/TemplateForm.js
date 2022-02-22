@@ -19,9 +19,9 @@ function TemplateForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-        <button name="templateName" onClick={handleChange} value="1" type="button">1</button>
-        <button name="templateName" onClick={handleChange} value="2" type="button">2</button>
-        <button name="templateName" onClick={handleChange} value="3" type="button">3</button>
+        <button name="templateName" onClick={handleChange} value="Template1" type="button">1</button>
+        <button name="templateName" onClick={handleChange} value="Template2" type="button">2</button>
+        <button name="templateName" onClick={handleChange} value="Template3" type="button">3</button>
         <input name="message" onChange={handleChange} required></input>
         <input name="pathname" onChange={handleChange} required></input>
         <button type="submit">submit</button>
