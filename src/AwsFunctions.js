@@ -16,18 +16,22 @@ export const listTables = () => {
 }
 
 export const addItemToDb = ({ pathname, message, templateName }) => {
-    const res = client.putItem({ 
-        Item: { 
-            pathname: { S: pathname },
-            message: { S: message },
-            templateName: { S: templateName }
-        },
-        TableName: "template_info",
-    }).send()
     
-    setTimeout(() => {
-        return res.httpResponse
-    }, 200)
+    return new Promise((resolve, reject) => {
+        const res = client.putItem({ 
+            Item: { 
+                pathname: { S: pathname },
+                message: { S: message },
+                templateName: { S: templateName }
+            },
+            TableName: "template_info",
+        }).send()
+
+        setTimeout(() => {
+            console.log(res)
+            resolve(res.httpResponse)
+        }, 200)
+    })
 }
 
 export const getItemFromDb = async (pathname) => {
