@@ -2,6 +2,7 @@ import TemplateForm from "./TemplateForm"
 import { Box, Stack, Button, Typography, Container} from "@mui/material"
 import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
 import placeholder from "../../images/placeholder.jpeg"
+import { Link } from "react-router-dom";
 
 function Home() {
   let theme = createTheme({
@@ -79,6 +80,31 @@ function Home() {
           </Box>
         </Stack>
       </Container>
+
+
+        {/* Step 3 */}
+        <Container 
+        sx={{ 
+          marginTop: "80px", 
+          marginBottom: "40px",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column"
+        }}>
+          <Box textAlign="center">
+            <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
+              Step 3: Visit Your Published Webpage!
+            </Typography>
+            <Typography variant="body1" mt={2} lineHeight={2}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </Typography>
+          </Box>
+          <Stack direction="row" spacing={{ xs: 1, sm: 3, md: 4}} alignItems="center" mt={4}>
+            <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo1" style={{ textDecoration: "none", color: "black" }}>View Demo 1</Link></Button>
+            <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo2" style={{ textDecoration: "none", color: "black" }}>View Demo 2</Link></Button>
+            <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo3" style={{ textDecoration: "none", color: "black" }}>View Demo 3</Link></Button>
+          </Stack>
+        </Container>
 
 
 
