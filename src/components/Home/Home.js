@@ -35,7 +35,7 @@ function Home() {
         <Typography variant="h3" mt={2} sx={{ color: "text.secondary", fontWeight: 300, marginBottom: "15px" }}>
          Sed do eiusmod tempor incididunt
         </Typography>
-        <Stack spacing={2} sx={{ width: "400px", marginTop: "10px" }}>
+        <Stack spacing={2} mt={2} width={{ xs: "200px", sm: "300px", m: "400px"}}>
           <Button variant="outlined">How it works</Button>
           <Button variant="filled"sx={{ bgcolor: "var(--light-purple)" }}>
             Start Writing Your Message
@@ -46,17 +46,17 @@ function Home() {
 
       {/* Step 1 */}
       <Container>
-        <Stack direction={{ xs: "column", sm: "row"}} spacing={2} >
-          <Box>
+        <Stack direction={{ xs: "column", sm: "row"}} spacing={2} alignItems={{ xs: "center", sm:"start"}} >
+          <Box textAlign={{ xs: "center", sm: "start"}}>
             <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
               Step 1: Pick a Template
             </Typography>
-            <Typography variant="body1" mt={2} mr={3} lineHeight={2}
+            <Typography variant="body1" mt={2} mr={4} lineHeight={2}
             >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Typography>
           </Box>
-          <Box>
+          <Box width={{ xs: "300px", sm: '600px'}} mx={{ xs: "auto"}}>
             <img src={placeholder} alt="placeholder" style={{ width: "100%", height: "100%"}} />
           </Box>
         </Stack>
@@ -64,16 +64,16 @@ function Home() {
 
 
       {/* Step 2 */}
-      <Container>
-        <Stack direction={{ xs: "column", sm: "row"}} spacing={2} >
-          <Box>
+      <Container sx={{ marginTop: "80px", marginBottom: "40px" }}>
+        <Stack direction={{ xs: "column-reverse", sm: "row"}} spacing={2} alignItems={{ xs: "center", sm:"start"}}>
+          <Box mr={{ xs: 0, sm: 4 }} width={{ xs: "300px", sm: '600px'}}>
             <img src={placeholder} alt="placeholder" style={{ width: "100%", height: "100%"}} />
           </Box>
-          <Box>
+          <Box textAlign={{ xs: "center", sm: "end"}}>
             <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
               Step 2: Write Your Message
             </Typography>
-            <Typography variant="body1" sx={{ marginTop: "15px", marginRight: "35px", lineHeight: "30px" }}>
+            <Typography variant="body1" mt={2} lineHeight={2}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </Typography>
           </Box>
