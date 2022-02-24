@@ -15,14 +15,15 @@ export const listTables = () => {
     console.log(response)
 }
 
-export const addItemToDb = ({ pathname, message, templateName }) => {
+export const addItemToDb = ({ pathname, message, templateName, email }) => {
     
     return new Promise((resolve, reject) => {
         const res = client.putItem({ 
             Item: { 
                 pathname: { S: pathname },
                 message: { S: message },
-                templateName: { S: templateName }
+                templateName: { S: templateName },
+                email: { S: email }
             },
             TableName: "template_info",
         }).send()
