@@ -13,10 +13,16 @@ function Home() {
       secondary: {
         main: '#8995FF',
       },
+      success: {
+        light: "#4caf50",
+        main: "#2e7d32"
+      }
     },
   });
 
   theme = responsiveFontSizes(theme);
+
+  console.log('if you\'re reading this, hi!')
 
   return (
     <ThemeProvider theme={theme}>

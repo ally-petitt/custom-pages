@@ -29,7 +29,6 @@ export const addItemToDb = ({ pathname, message, templateName, email }) => {
         }).send()
 
         setTimeout(() => {
-            console.log(res)
             resolve(res.httpResponse)
         }, 200)
     })
