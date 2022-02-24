@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { addItemToDb } from '../../AwsFunctions';
+import { TextField, Button, Stack, Typography } from "@mui/material";
 
 function TemplateForm() {
     const [input, setInput] = useState({message: "", templateName: "", pathname: "" })
@@ -18,13 +19,31 @@ function TemplateForm() {
     }
 
   return (
-    <form onSubmit={handleSubmit}>
-        <button name="templateName" onClick={handleChange} value="Template1" type="button">1</button>
-        <button name="templateName" onClick={handleChange} value="Template2" type="button">2</button>
-        <button name="templateName" onClick={handleChange} value="Template3" type="button">3</button>
-        <input name="message" onChange={handleChange} required></input>
-        <input name="pathname" onChange={handleChange} required></input>
-        <button type="submit">submit</button>
+    <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+      <Stack direction="column" p={4} alignItems="center">
+        <TextField
+          sx={{ marginBottom: "40px", width:"100%" }}
+          name="message" 
+          id="outlined-multiline-static" 
+          multiline 
+          rows={6} 
+          label="Your message"
+          required
+          onChange={handleChange} />
+        <TextField
+          label="Email address"
+          sx={{ width: "100%" }}
+          helperText="This will enable you to make changes to your page in the future." />
+        <Stack my={4} direction="row" alignItems="center">
+          <Typography variant="subtitle1" component="p" sx={{ fontWeight: "400"}}>https://custompages.github.io/</Typography>
+          <TextField
+            name="pathname" 
+            label="Your URL"
+            required
+            onChange={handleChange} />
+        </Stack>
+        <Button type="submit" variant="contained" color="secondary" sx={{ width: "600px" }}>Proceed to checkout</Button>
+      </Stack>
     </form>
   )
 }

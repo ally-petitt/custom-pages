@@ -38,7 +38,7 @@ function Home() {
         </Typography>
         <Stack spacing={2} mt={2} width={{ xs: "200px", sm: "300px", m: "400px"}}>
           <Button variant="outlined">How it works</Button>
-          <Button variant="filled"sx={{ bgcolor: "var(--light-purple)" }}>
+          <Button variant="filled" sx={{ bgcolor: "var(--light-purple)" }}>
             Start Writing Your Message
           </Button>
         </Stack>
@@ -50,7 +50,7 @@ function Home() {
         <Stack direction={{ xs: "column", sm: "row"}} spacing={2} alignItems={{ xs: "center", sm:"start"}} >
           <Box textAlign={{ xs: "center", sm: "start"}}>
             <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
-              Step 1: Pick a Template
+              Step 1: Write Your Message
             </Typography>
             <Typography variant="body1" mt={2} mr={4} lineHeight={2}
             >
@@ -72,7 +72,7 @@ function Home() {
           </Box>
           <Box textAlign={{ xs: "center", sm: "end"}}>
             <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
-              Step 2: Write Your Message
+              Step 2: Pick Your URL
             </Typography>
             <Typography variant="body1" mt={2} lineHeight={2}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -82,33 +82,54 @@ function Home() {
       </Container>
 
 
-        {/* Step 3 */}
-        <Container 
-        sx={{ 
-          marginTop: "80px", 
-          marginBottom: "40px",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column"
-        }}>
-          <Box textAlign="center">
-            <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
-              Step 3: Visit Your Published Webpage!
+      {/* Step 3 */}
+      <Container 
+      sx={{ 
+        marginTop: "80px", 
+        marginBottom: "40px",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column"
+      }}>
+        <Box textAlign="center">
+          <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
+            Step 3: Share Your Published Webpage!
+          </Typography>
+          <Typography variant="body1" mt={2} lineHeight={2}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </Typography>
+        </Box>
+        <Stack direction="row" spacing={{ xs: 1, sm: 3, md: 4}} alignItems="center" mt={4}>
+          <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo1" target="_blank" style={{ textDecoration: "none", color: "black" }}>View Demo 1</Link></Button>
+          <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo2" target="_blank" style={{ textDecoration: "none", color: "black" }}>View Demo 2</Link></Button>
+          <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo3" target="_blank" style={{ textDecoration: "none", color: "black" }}>View Demo 3</Link></Button>
+        </Stack>
+      </Container>
+
+
+      {/* Why Us? */}
+      <Container sx={{ marginTop: "80px", textAlign:"center" }}>
+        <Stack direction={{ xs: "column", sm: "row"}} spacing={2} alignItems={{ xs: "center", sm:"start"}} >
+          <Box>
+            <Typography variant="h5" component="body" color="primary" textAlign="center" sx={{fontWeight: "600"}}>
+              Why Us?
             </Typography>
-            <Typography variant="body1" mt={2} lineHeight={2}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Typography variant="body1" mt={2} component="body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
             </Typography>
           </Box>
-          <Stack direction="row" spacing={{ xs: 1, sm: 3, md: 4}} alignItems="center" mt={4}>
-            <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo1" style={{ textDecoration: "none", color: "black" }}>View Demo 1</Link></Button>
-            <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo2" style={{ textDecoration: "none", color: "black" }}>View Demo 2</Link></Button>
-            <Button sx={{ bgcolor: 'secondary.main' }}><Link to="/demo3" style={{ textDecoration: "none", color: "black" }}>View Demo 3</Link></Button>
-          </Stack>
-        </Container>
+          <img src={placeholder} />
+        </Stack>
+      </Container>
 
 
-
-      {/* <TemplateForm /> */}
+      {/* template form */}
+      <Container sx={{ marginTop: "100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <Typography variant="h4" component="body" color="primary" textAlign="center" sx={{ fontWeight: "600", borderBottom: "solid 3px black", width: "fit-content" }}>
+              Start Writing Your Message
+        </Typography>
+        <TemplateForm />
+      </Container>
     </ThemeProvider>
   )
 }
