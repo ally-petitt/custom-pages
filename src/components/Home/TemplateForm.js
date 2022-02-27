@@ -80,7 +80,7 @@ function TemplateForm() {
             helperText={props.path.isTaken ? "This pathname is currently taken. Please enter a different pathname." : null}
             onChange={handleChange} />
         </Stack>
-        <Button type="submit" variant="contained" color="secondary" sx={{ width: "600px" }}>Proceed to checkout</Button>
+        <Button type="submit" variant="contained" color="secondary" sx={{ width: "100%" }}>Proceed to checkout</Button>
         {
           props.submitWentThrough ? 
           <Box mt={2} sx={{ width: 550,
