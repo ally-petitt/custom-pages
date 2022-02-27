@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { addItemToDb, getItemFromDb } from '../../AwsFunctions';
 import { TextField, Button, Stack, Box, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function TemplateForm() {
     const [input, setInput] = useState({message: "", email: "", templateName: "Template1", pathname: "" })
@@ -71,7 +72,7 @@ function TemplateForm() {
           sx={{ width: "100%" }}
           helperText={props.email.helperText} />
         <Stack my={4} direction="row" alignItems="center">
-          <Typography variant="subtitle1" component="p" sx={{ fontWeight: "400"}}>https://custompages.github.io/</Typography>
+          <Typography variant="subtitle1" component="p" sx={{ fontWeight: "400"}}>https://ally-petitt.github.io/custom-pages/#/</Typography>
           <TextField
             name="pathname" 
             label="Your URL"
@@ -87,7 +88,7 @@ function TemplateForm() {
             padding: 2,
             backgroundColor: 'success.light',
             textAlign: "center"
-           }}>Your page has been published!</Box>
+           }}>Your page has been published! Click <Link to={`/${input.pathname}`}>here</Link> to see it!</Box>
           : null
         }
       </Stack>
