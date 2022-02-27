@@ -2,6 +2,7 @@
   "name": "custom-pages",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ally-petitt.github.io/custom-pages/",
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.52.0",
     "@emotion/react": "^11.8.1",
