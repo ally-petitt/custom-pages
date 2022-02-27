@@ -6,6 +6,7 @@ import typing from "../../images/typing.jpg"
 import url from "../../images/url.png"
 import whyUs from "../../images/why-us.jpg"
 import { Link } from "react-router-dom";
+import { Link as Scroll } from "react-scroll"
 
 function Home() {
   let theme = createTheme({
@@ -40,22 +41,22 @@ function Home() {
         alignItems: "center"  
       }}>
         <Typography variant='h1' sx={{ fontWeight: 400 }}>
-          Lorem ipsum dolor sit amet, consectetur.
+          Custom Pages
         </Typography>
         <Typography variant="h3" mt={2} sx={{ color: "text.secondary", fontWeight: 300, marginBottom: "15px" }}>
-         Sed do eiusmod tempor incididunt
+         Creating Your Own Web Page Made Easy.
         </Typography>
         <Stack spacing={2} mt={2} width={{ xs: "200px", sm: "300px", m: "400px"}}>
-          <Button variant="outlined">How it works</Button>
+          <Button variant="outlined"><Scroll to="step1" smooth={true}>How it works</Scroll></Button>
           <Button variant="filled" sx={{ bgcolor: "var(--light-purple)" }}>
-            Start Writing Your Message
+            <Scroll to="form" smooth={true}>Start Writing Your Message</Scroll>
           </Button>
         </Stack>
       </Container>
 
 
       {/* Step 1 */}
-      <Container>
+      <Container id="step1">
         <Stack direction={{ xs: "column", sm: "row"}} spacing={2} alignItems={{ xs: "center", sm:"start"}} >
           <Box textAlign={{ xs: "center", sm: "start"}}>
             <Typography variant="h5" component="h3" color="primary" sx={{fontWeight: "500"}}>
@@ -133,7 +134,7 @@ function Home() {
 
 
       {/* template form */}
-      <Container sx={{ marginTop: "100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Container id="form" sx={{ marginTop: "100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
         <Typography variant="h4" component="body" color="primary" textAlign="center" sx={{ fontWeight: "600", borderBottom: "solid 3px black", width: "fit-content" }}>
               Start Writing Your Message
         </Typography>
